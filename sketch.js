@@ -12,7 +12,7 @@ function setup(){
 }
 
 function draw(){
-	background(240);
+	background(250,0,0);
 		for (let i = 0; i < players.length; i++) {
 			players[i].drawPlayer();
 	    players[i].movePlayer();
