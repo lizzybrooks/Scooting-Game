@@ -3,7 +3,7 @@ let players=[];
 
 function setup(){
 	createCanvas(windowWidth, windowHeight);
-	let b = new player(windowWidth/2, windowHeight/2 - 30.7);
+	let b = new player(150, windowHeight/2 - 30.7);
 		players.push(b);
 		console.log(players);
 	// let c = new road(windowWidth/2, windowHeight/2 - 30.7);
@@ -23,7 +23,15 @@ function draw(){
 	  // }
 
 		line(0,windowHeight/2+70.7,windowWidth,windowHeight/2+70.7);
+		finishLine();
+// 		if (players.constructor == windowWidth-300, windowHeight/2+170.7) {
+// fill(255);
+// 			rect(0,0,windowWidth,windowHeight);
+// 			text('YOU WIN!',500,500);
+// 		}
+
 }
+
 
 class player {
 	constructor(x,y){ //every ball needs an x value and a y value
@@ -46,7 +54,7 @@ class player {
 			this.x = this.x -10
 		}
 
-		if (keyIsPressed(UP_ARROW) === true) {
+		if (keyIsPressed(UP_ARROW)) {
 			this.y = this.y -10
 		}
 
@@ -74,3 +82,7 @@ class player {
 //
 // 	}
 // }
+function finishLine() {
+	noFill();
+	ellipse(windowWidth-300,windowHeight/2-30.7,400);
+}
