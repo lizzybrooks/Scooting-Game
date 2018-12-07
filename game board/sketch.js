@@ -10,11 +10,15 @@ function draw() {
 
   }
   gamePath();
-
+  wheresMyMouse();
 }
 
 function gamePath(){
   strokeWeight(1);
-  line(0,windowHeight/2,windowWidth,windowHeight/2)
-  rect(-1, 3*windowHeight/4-51, 150,51);
+  line(0,3*windowHeight/4-51,windowWidth,3*windowHeight/4-51)
+  rect(10, 3*windowHeight/4-76, 150,25);
+}
+function wheresMyMouse(){
+  fill(0);
+  text('mouseX, mouseY',50,50);
 }
