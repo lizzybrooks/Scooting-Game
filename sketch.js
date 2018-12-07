@@ -12,7 +12,7 @@ function setup(){
 }
 
 function draw(){
-	background(250,0,0);
+	background(250);
 		for (let i = 0; i < players.length; i++) {
 			players[i].drawPlayer();
 	    players[i].movePlayer();
@@ -21,17 +21,17 @@ function draw(){
 		// 	roads[i].drawRoad();
 	  //   roads[i].moveRoad();
 	  // }
-
 		line(0,windowHeight/2+70.7,windowWidth,windowHeight/2+70.7);
 		finishLine();
-// 		if (players.constructor == windowWidth-300, windowHeight/2+170.7) {
-// fill(255);
-// 			rect(0,0,windowWidth,windowHeight);
-// 			text('YOU WIN!',500,500);
-// 		}
+		for (let i = 0; i < players.length; i++) {
+			if (players[i].x >= windowWidth-300) {
+      	fill(255);
+				rect(0,0,windowWidth,windowHeight);
+				text('YOU WIN!',500,500);
+			}
 
+		}
 }
-
 
 class player {
 	constructor(x,y){ //every ball needs an x value and a y value
@@ -54,9 +54,9 @@ class player {
 			this.x = this.x -10
 		}
 
-		if (keyIsPressed(UP_ARROW)) {
-			this.y = this.y -10
-		}
+		// if (keyIsPressed(UP_ARROW)) {
+		// 	this.y = this.y -10
+		// }
 
 		// function keyReleased() {
   	// 	if (key == UP_ARROW) {
