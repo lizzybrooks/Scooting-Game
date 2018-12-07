@@ -9,8 +9,10 @@ function draw() {
     background(random(150,250),random(45,65),random(220,244));
 
   }
+  if (frameCount % 1 == 0){
   gamePath();
   wheresMyMouse();
+}
 }
 
 function gamePath(){
