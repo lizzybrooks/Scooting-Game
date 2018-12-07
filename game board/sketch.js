@@ -16,14 +16,17 @@ function draw() {
 }
 
 function gamePath(){
-  fill(255)
+  fill(0)
   strokeWeight(1);
   line(0,3*windowHeight/4-51,windowWidth,3*windowHeight/4-51)
   rect(10, 3*windowHeight/4-76, 150,25);
 }
 function wheresMyMouse(){
-  fill(0);
+  fill(255);
+  rect(50,50,300,100);
   scale(5.0);
+  fill(0);
   text(mouseX +',' + mouseY,10,20);
   scale(0.2);
+
 }
