@@ -9,7 +9,7 @@ function draw() {
     background(random(150,250),random(45,65),random(220,244));
 
   }
-  if (frameCount % 1 == 0){
+  if (frameCount % 2 == 0){
   gamePath();
   wheresMyMouse();
 }
@@ -23,5 +23,7 @@ function gamePath(){
 }
 function wheresMyMouse(){
   fill(0);
-  text(mouseX, mouseY,50,50);
+  scale(5.0);
+  text(mouseX +',' + mouseY,10,20);
+  scale(0.2);
 }
