@@ -40,42 +40,42 @@ class player {
 		strokeWeight(1);
     fill("red");
 		rect(this.x,this.y,this.w,this.w);
-		if (this.w >= 50 && keyIsDown(189)){//I don't know what is happening with the size restriction, the shape gets smaller than 20
-			this.w = .95*this.w
+		if (this.w >= 50 && keyIsDown(189)){
+			this.w = .95*this.w;
 			//strokeWeight(linewidth-5)//this is not working, the width stays the same while the shape gets smaller
 		}
 	}
 
 	movePlayer(){
 		if (keyIsDown(RIGHT_ARROW)) {
-			this.x = this.x +10
+			this.x = this.x +10;
 		}
 
 		if (keyIsDown(LEFT_ARROW)) {
-			this.x = this.x -10
+			this.x = this.x -10;
 		}
 
 		if(keyIsDown(UP_ARROW)){
-			this.y = this.y -10
+			this.y = this.y -10;
 		}
 
 		if(keyIsDown(DOWN_ARROW)){
-			this.y = this.y +10
+			this.y = this.y +10;
 		}
   }
-}
- diePlayer(){
-	 if(this.x+this.w == b && this.y+this.w >= 0 && this.y+this.w <= d){
+ diePlayer(){ //this is not working. I want it to create a white screen that says "you loose" when the player comes into contact with a line, right now it is not reacting at all.
+	 if(b <= this.x+this.w && b>=this.x && this.y+this.w >= 0 && this.y+this.w <= d){
 		 noStroke();
 		 fill(255);
 		 		rect(0,0,windowWidth,windowHeight);
 		push();
-			scale(5.0)
-			fill(0)
+			scale(5.0);
+			fill(0);
 				text('YOU LOOSE!',windowWidth/2,windowHeight/2);//the screen goes white, but teh text does not appear
 		pop();
+		}
 	}
-	 }
+}
 function finishLine(){
 	noFill();
 	stroke('rgba(255,0,50, 0.25)');
@@ -91,24 +91,24 @@ function finishLine(){
 			fill(255);
 				rect(0,0,windowWidth,windowHeight);
 			push();
-				scale(5.0)
-				fill(0)
-					text('YOU WIN!',windowWidth/2,windowHeight/2);//the screen goes white, but teh text does not appear
+				scale(5.0);
+				fill(0);
+					text('YOU WIN!',windowWidth/2,windowHeight/2);//the screen goes white, but the text does not appear
 			pop();
 		}
 	}
 }
 function gameBoard(){
 	strokeWeight(10);
-let a = 0
-let b = windowHeight/2+70.7
-let c = windowWidth
-let d = windowHeight/2+70.7
+let a = 0;
+let b = windowHeight/2+70.7;
+let c = windowWidth;
+let d = windowHeight/2+70.7;
 
-let e = windowWidth/2
-let f = 0
-let g = windowWidth/2
-let h = windowHeight/2+70.7-50
+let e = windowWidth/2;
+let f = 0;
+let g = windowWidth/2;
+let h = windowHeight/2+70.7-50;
 	line(a,b,c,d);
 	line(e,f,g,h);
 }
