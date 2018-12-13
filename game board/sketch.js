@@ -1,12 +1,14 @@
 function setup() {
-  createCanvas(4*windowWidth, windowHeight);
+  createCanvas(2*windowWidth, 2*windowHeight);
   background(random(150,250),random(45,65),random(220,244));
+
 
 }
 function draw() {
-
+  scale(5.0);
+  scale(0.20);
   if (frameCount % 30 == 0){
-    background(random(150,250),random(45,65),random(220,244));
+   background(random(150,250),random(45,65),random(150,250));
 
   }
   if (frameCount % 2 == 0){
@@ -16,17 +18,30 @@ function draw() {
 }
 
 function gamePath(){
-  fill(0)
-  strokeWeight(1);
-  line(0,3*windowHeight/4-51,windowWidth,3*windowHeight/4-51)
-  rect(10, 3*windowHeight/4-76, 150,25);
+  noFill();
+  strokeWeight(4);
+  beginShape();
+  vertex(0,3*windowHeight/4-51);
+  vertex(417,3*windowHeight/4-51);
+  vertex(417,windowHeight);
+   endShape();
+  beginShape();
+  vertex(545,windowHeight);
+  vertex(545,3*windowHeight/4-51);
+  vertex(860,3*windowHeight/4-51);
+  vertex(860,3*windowHeight/4-51);
+  vertex(940,3*windowHeight/4-131);
+  vertex(940,3*windowHeight/4-131);
+  vertex(1015,3*windowHeight/4-131);
+  endShape();
 }
 function wheresMyMouse(){
+  strokeWeight(1);
   fill(255);
-  rect(50,50,300,100);
+  rect(3*windowWidth/4,50,300,100);
   scale(5.0);
   fill(0);
-  text(mouseX +',' + mouseY,10,20);
+  text(mouseX +',' + mouseY,3*windowWidth/20,20);
   scale(0.2);
 
 }
