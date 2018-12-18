@@ -12,7 +12,7 @@ let h;
 
 function setup(){
 createCanvas(2*windowWidth, 2*windowHeight);
-	let z = new player(150, windowHeight/2 - 30.7,100);
+	let z = new player(100, windowHeight/2 - 30.7,100);
 		players.push(z);
 		console.log(players);
 }
